@@ -26,7 +26,7 @@ function CreateSuperheroForm({createForm, superhero}) {
             for (let val in data) {
                 if (val === 'image' && data[val][0]) {
                     formData.append(val, data[val][0]);
-                } else if (val !== 'image') {
+                } else if (val !== 'image' && data[val]) {
                     formData.append(val, data[val]);
                 }
             }
@@ -69,7 +69,7 @@ function CreateSuperheroForm({createForm, superhero}) {
                         <input
                             defaultValue={createForm ? '' : superhero.nickname}
                             {...register("nickname", {
-                                required: createForm})}
+                                required: true})}
                             disabled={isActive}
                         />
                         <div>{errors?.nickname && <p className='error'>Required field</p>}</div>
@@ -81,7 +81,7 @@ function CreateSuperheroForm({createForm, superhero}) {
                         Real name
                         <input
                             defaultValue={createForm ? '' : superhero.real_name}
-                            {...register("real_name", {required: createForm})}
+                            {...register("real_name", {required: true})}
                             disabled={isActive}
                         />
                         <div>{errors?.real_name && <p className='error'>Required field</p>}</div>
@@ -94,7 +94,7 @@ function CreateSuperheroForm({createForm, superhero}) {
                         <input
                             defaultValue={createForm ? '' : superhero.origin_description}
                             {...register("origin_description", {
-                                required: createForm,
+                                required: true,
                                 minLength: {
                                     value: 10,
                                     message: 'Minimum 15'
@@ -111,7 +111,7 @@ function CreateSuperheroForm({createForm, superhero}) {
                         Superpowers
                         <input
                             defaultValue={createForm ? '' : superhero.superpowers}
-                            {...register("superpowers", {required: createForm})}
+                            {...register("superpowers", {required: true})}
                             disabled={isActive}
                         />
                         <div>{errors?.superpowers && <p className='error'>Required field</p>}</div>
@@ -123,7 +123,7 @@ function CreateSuperheroForm({createForm, superhero}) {
                         Catch Prase
                         <input
                             defaultValue={createForm ? '' : superhero.catch_phrase}
-                            {...register("catch_phrase", {required: createForm})}
+                            {...register("catch_phrase", {required: true})}
                             disabled={isActive}
                         />
                         <div>{errors?.catch_phrase && <p className='error'>Required field</p>}</div>
