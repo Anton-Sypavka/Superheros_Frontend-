@@ -68,7 +68,8 @@ function CreateSuperheroForm({createForm, superhero}) {
                         Nickname
                         <input
                             defaultValue={createForm ? '' : superhero.nickname}
-                            {...register("nickname", {required: createForm})}
+                            {...register("nickname", {
+                                required: createForm})}
                             disabled={isActive}
                         />
                         <div>{errors?.nickname && <p className='error'>Required field</p>}</div>
@@ -92,10 +93,16 @@ function CreateSuperheroForm({createForm, superhero}) {
                         Description
                         <input
                             defaultValue={createForm ? '' : superhero.nickname}
-                            {...register("origin_description", {required: createForm})}
+                            {...register("origin_description", {
+                                required: createForm,
+                                minLength: {
+                                    value: 10,
+                                    message: 'Minimum 15'
+                                }
+                            })}
                             disabled={isActive}
                         />
-                        <div>{errors?.origin_description && <p className='error'>Required field</p>}</div>
+                        <div>{errors?.origin_description && <p className='error'>{errors?.origin_description?.message || 'Required field'}</p>}</div>
                     </label>
                 </div>
 
