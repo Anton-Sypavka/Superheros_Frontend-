@@ -23,8 +23,6 @@ function CreateSuperheroForm({createForm, superhero}) {
         try {
             const formData = new FormData();
 
-            console.log(data);
-
             for (let val in data) {
                 if (val === 'image' && data[val][0]) {
                     formData.append(val, data[val][0]);
@@ -147,7 +145,12 @@ function CreateSuperheroForm({createForm, superhero}) {
                 isActive &&
                 <>
                     <button onClick={onEditBtnClick}>Edit</button>
-                    <button onClick={onDeleteBtnClick}>Delete Superhero</button>
+                    <button
+                        onClick={onDeleteBtnClick}
+                        style={{backgroundColor: 'red', color: 'white', marginLeft: '10px'}}
+                    >
+                        Delete Superhero
+                    </button>
                 </>
             }
         </div>

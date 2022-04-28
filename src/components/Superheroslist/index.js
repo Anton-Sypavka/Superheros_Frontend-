@@ -14,7 +14,7 @@ function Superheroslist() {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(loadSuperheros(page, 2));
+        dispatch(loadSuperheros(page, 6));
     }, [page])
 
     const onPaginationBtnClick = (e) => {
@@ -36,13 +36,25 @@ function Superheroslist() {
     } else {
         return (
             <div>
-                <p>{page}</p>
                 <ul>
                     { superheros.map( hero => <SuperheroItem key={hero._id} props={hero}/>) }
                 </ul>
                 <div>
-                    <button onClick={onPaginationBtnClick} data-page="prev" disabled={page === 1}>Prev page</button>
-                    <button onClick={onPaginationBtnClick} data-page="next" disabled={error}>Next page</button>
+                    <button
+                        onClick={onPaginationBtnClick}
+                        data-page="prev"
+                        disabled={page === 1}
+                    >
+                        Prev page
+                    </button>
+                    <button
+                        onClick={onPaginationBtnClick}
+                        data-page="next"
+                        disabled={error}
+                        style={{marginLeft: '10px'}}
+                    >
+                        Next page
+                    </button>
                 </div>
             </div>
         )

@@ -1,0 +1,10 @@
+.superheros {
+  padding: 100px 0;
+
+ &__title-container {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   column-gap: 30px;
+ }
+}
