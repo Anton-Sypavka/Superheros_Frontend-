@@ -1,0 +1,27 @@
+.superhero-form {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  &__input {
+    margin-bottom: 10px;
+    height: 60px;
+
+    label {
+      display: block;
+      text-align: left;
+      font-size: 15px;
+    }
+
+    input {
+      margin-top: 5px;
+      width: 100%;
+    }
+  }
+
+  .error {
+    margin: 5px 0 0;
+    text-align: left;
+    font-size: 13px;
+    color: red;
+  }
+}
