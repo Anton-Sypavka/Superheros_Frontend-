@@ -80,7 +80,7 @@ function CreateSuperheroForm({createForm, superhero}) {
                     <label>
                         Real name
                         <input
-                            defaultValue={createForm ? '' : superhero.nickname}
+                            defaultValue={createForm ? '' : superhero.real_name}
                             {...register("real_name", {required: createForm})}
                             disabled={isActive}
                         />
@@ -92,7 +92,7 @@ function CreateSuperheroForm({createForm, superhero}) {
                     <label>
                         Description
                         <input
-                            defaultValue={createForm ? '' : superhero.nickname}
+                            defaultValue={createForm ? '' : superhero.origin_description}
                             {...register("origin_description", {
                                 required: createForm,
                                 minLength: {
@@ -110,7 +110,7 @@ function CreateSuperheroForm({createForm, superhero}) {
                     <label>
                         Superpowers
                         <input
-                            defaultValue={createForm ? '' : superhero.nickname}
+                            defaultValue={createForm ? '' : superhero.superpowers}
                             {...register("superpowers", {required: createForm})}
                             disabled={isActive}
                         />
@@ -122,7 +122,7 @@ function CreateSuperheroForm({createForm, superhero}) {
                     <label>
                         Catch Prase
                         <input
-                            defaultValue={createForm ? '' : superhero.nickname}
+                            defaultValue={createForm ? '' : superhero.catch_phrase}
                             {...register("catch_phrase", {required: createForm})}
                             disabled={isActive}
                         />
